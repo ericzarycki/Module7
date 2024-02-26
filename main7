@@ -1,0 +1,14 @@
+data("iris")
+head(iris)
+summary(iris)
+
+#S3
+summary(iris)
+plot(iris$Sepal.Length, iris$Sepal.Width)
+
+#S4
+install.packages("methods")
+library(methods)
+setClass("IrisData", slots = list(data = "data.frame"))
+iris_s4 <- new("IrisData", data = iris)
+print(iris_s4)
